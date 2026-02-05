@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayman Shahrour | Digital Architect</title>
+
+<style>
+
+:root {
+    --primary: #ff00c1;
+    --secondary: #00d2ff;
+    --bg: #050505;
+    --glass: rgba(255, 255, 255, 0.1);
+}
+
+body {
+    margin: 0;
+    background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #050505);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    color: white;
+    font-family: 'Orbitron', sans-serif; /* You can import this from Google Fonts */
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Fixed Glass Navbar */
+.glass-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: var(--glass);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 1000;
+    padding: 20px 0;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav-container a {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.3s;
+}
+
+.nav-container a:hover {
+    color: var(--secondary);
+    text-shadow: 0 0 8px var(--secondary);
+}
+
+/* Video Hero Overlay */
+.video-container {
+    position: relative;
+    height: 80vh;
+    overflow: hidden;
+}
+
+.bg-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.4);
+}
+
+.video-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+/* Image Styles: Filtered, Rounded, Centered */
+.styled-img {
+    display: block;
+    margin: 0 auto;
+    width: 200px;
+    border-radius: 30px;
+    filter: saturate(1.5) contrast(1.2);
+    box-shadow: 0 0 20px var(--primary);
+}
+
+/* Two Column Layout */
+.grid-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 100px 20px;
+}
+
+.col {
+    background: var(--glass);
+    padding: 40px;
+    border-radius: 20px;
+    width: 450px; /* Specific Width */
+    min-height: 350px; /* Specific Height */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.col h3 { color: var(--secondary); }
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border: 1px solid var(--secondary);
+}
+
+th, td {
+    padding: 15px;
+    border: 1px solid rgba(255,255,255,0.1);
+    color: #00d2ff;
+}
+
+thead { background-color: var(--primary); color: white; }
+
+/* Paragraph Hover Effect */
+.hover-p {
+    transition: all 0.4s ease;
+    line-height: 1.6;
+}
+
+.hover-p:hover {
+    transform: translateY(-5px);
+    color: var(--secondary);
+    text-shadow: 0 0 10px var(--secondary);
+}
+
+/* Image Overlay Fade */
+.overlay-box {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.base-img { width: 100%; display: block; }
+
+.fade-layer {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(255, 0, 193, 0.8);
+    opacity: 0;
+    transition: 0.5s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay-box:hover .fade-layer { opacity: 1; }
+
+/* Centered Bold Footer */
+footer {
+    text-align: center;
+    font-weight: bold;
+    padding: 50px;
+    letter-spacing: 4px;
+    color: var(--primary);
+}
+</style>
+</head>
+<body>
+
+    <nav class="glass-nav">
+        <div class="nav-container">
+            <span class="logo">AS</span>
+            <div class="links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#work">Work</a>
+            </div>
+        </div>
+    </nav>
+
+    <header id="home" class="hero">
+        <div class="video-container">
+            <video autoplay muted loop playsinline class="bg-video">
+                <source src="https://cdn.pixabay.com/video/2025/12/21/323513_large.mp4" type="video/mp4">
+            </video>
+            <div class="video-overlay">
+                <h1 class="glitch-text">AYMAN SHAHROUR</h1>
+                <p>Building the Future, One Pixel at a Time</p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="about" class="grid-section">
+            <div class="col profile-card">
+                <div class="img-wrapper">
+                    <img src="https://picsum.photos/300" alt="Ayman" class="styled-img">
+                </div>
+                <h3>The Creator</h3>
+                <p class="hover-p">Passionate about bridging the gap between complex code and intuitive design. I don't just build websites; I craft digital experiences.</p>
+            </div>
+
+            <div class="col stats-card">
+                <h3>Technical Stats</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Skill</th>
+                            <th>Mastery</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>HTML/CSS</td><td>95%</td></tr>
+                        <tr><td>UI Design</td><td>88%</td></tr>
+                        <tr><td>Creative Coding</td><td>80%</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="work" class="overlay-showcase">
+            <div class="overlay-box">
+                <img src="https://picsum.photos/1000/500?neon" alt="Project" class="base-img">
+                <div class="fade-layer">
+                    <div class="fade-text">
+                        <h2>Project: Neon Genesis</h2>
+                        <p>A deep dive into interactive UI elements.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>DESIGNED BY AYMAN SHAHROUR &copy; 2026</p>
+    </footer>
+
+</body>
+</html>
